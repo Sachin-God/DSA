@@ -94,7 +94,7 @@ def insert(rootNode, value):
                 return True
 
 # insert(rootN,'dillon harper')
-# levelOrderTraversal(rootN)
+levelOrderTraversal(rootN)
 
 def deletetree(rootNode):
     rootNode.data = None
