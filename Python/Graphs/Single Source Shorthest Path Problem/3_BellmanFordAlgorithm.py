@@ -16,18 +16,23 @@ class Graph:
             print(key, " : ", val)
     
     def bellmanFord(self, src):
-        dist = {i : float('inf') for i in self.nodes}
+        # Step 1: Initialize distances from src to all other nodes as INFINITE
+        dist = {i: float('inf') for i in self.nodes}
         dist[src] = 0
+
+        # Step 2: Relax all edges |V| - 1 times
         for _ in range(self.V - 1):
-            for s,d,w in self.graph:
+            for s, d, w in self.graph:
                 if dist[s] != float('inf') and dist[d] > dist[s] + w:
                     dist[d] = dist[s] + w
 
-        for s,d,w in self.graph:
+        # Step 3: Check for negative-weight cycles
+        for s, d, w in self.graph:
             if dist[s] != float('inf') and dist[d] > dist[s] + w:
                 print('Neg Cycle')
                 return
-        
+
+        # Step 4: Print the solution
         self.printSol(dist)
 
 graph = Graph(4)
