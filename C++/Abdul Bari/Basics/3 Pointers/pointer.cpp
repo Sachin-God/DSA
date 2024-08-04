@@ -37,5 +37,5 @@ int main() {
 
     return 0;
     free(q);
-    free(p);
+    delete []p; // for c lang same as free(p) in cpp
 }
