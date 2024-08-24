@@ -2,32 +2,27 @@
 
 using namespace std;
 
-class Rectangle
-{
+class Rectangle{
 private:
     int length;
     int width;
 
 public:
-// Constructor is something which gets called every time we initialize an object
-    Rectangle(int l, int w)
-    {
+    Rectangle(int l, int w){
         length = l;
         width = w;
     }
 
     void area();
 
-    void change_length(int l)
-    {
+    void change_length(int l){
         length = l;
     }
 };
 
-void Rectangle::area()
-    {
-        printf("%d \n", length * width);
-    }
+void Rectangle::area(){
+    printf("%d \n", length * width);
+}
 
 int main()
 {
