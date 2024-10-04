@@ -134,7 +134,7 @@ public:
         return m;
     }
 
-    int avg(){
+    int sum(){
         int total = 0;
         if (length == 0) return 0;
 
@@ -142,6 +142,24 @@ public:
             total += A[i];
         }
         return total;
+    }
+
+    float avg(){
+        float total = 0;
+        if (length == 0) return 0;
+
+        for (int i = 0; i < length; i++){
+            total += A[i];
+        }
+        return total / length;
+    }
+
+    void reverse(int idx = 0){
+        if (idx >= length / 2) return;
+        int temp = A[idx];
+        A[idx] = A[length - idx - 1];
+        A[length - idx - 1] = temp;
+        reverse(idx + 1);
     }
 };
 
