@@ -124,10 +124,20 @@ public:
         return m;
     }
 
+    int min(){
+        int m = INT32_MAX;
+        for (int i = 0; i < length; i++){
+            if (A[i] < m){
+                m = A[i];
+            }
+        }
+        return m;
+    }
+
     int avg(){
         int total = 0;
         if (length == 0) return 0;
-        
+
         for (int i = 0; i < length; i++){
             total += A[i];
         }
