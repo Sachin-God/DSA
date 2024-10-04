@@ -100,6 +100,39 @@ public:
         }
         return -1;
     }
+
+    int get(int idx){
+        if (idx >= 0 && idx < length){
+            return A[idx];
+        } 
+        return -1;
+    }
+
+    void set(int data, int idx){
+        if (idx >= 0 && idx < length){
+            A[idx] = data;
+        }
+    }
+
+    int max(){
+        int m = INT32_MIN;
+        for (int i = 0; i < length; i++){
+            if (A[i] > m){
+                m = A[i];
+            }
+        }
+        return m;
+    }
+
+    int avg(){
+        int total = 0;
+        if (length == 0) return 0;
+        
+        for (int i = 0; i < length; i++){
+            total += A[i];
+        }
+        return total;
+    }
 };
 
 int main(){
