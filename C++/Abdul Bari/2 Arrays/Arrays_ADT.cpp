@@ -85,6 +85,21 @@ public:
         }
         return -1;
     }
+
+    int BinarySearch(int n){
+        int start = 0, end = length - 1, mid;
+        while (start <= end){
+            mid = (start + end) / 2;
+            if (A[mid] > n){
+                end = mid - 1;
+            } else if (A[mid] < n){
+                start = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
 };
 
 int main(){
