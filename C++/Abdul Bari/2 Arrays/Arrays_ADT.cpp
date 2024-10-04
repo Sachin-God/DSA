@@ -161,6 +161,33 @@ public:
         A[length - idx - 1] = temp;
         reverse(idx + 1);
     }
+
+    void merge(Array arr1, Array arr2){
+        if (length != 0) {
+            cout<<"Cannot merge: Array is not empty"<<endl;
+            return;
+        }
+
+        if (size < arr1.length + arr2.length) {
+            delete []A;
+            this->size = arr1.length + arr2.length;
+            A = new int[size];
+        }
+
+        int i = 0, j = 0, k = 0;
+
+        while (i < arr1.length && j < arr2.length){
+            if (arr1.get(i) < arr2.get(j)){
+                A[k++] = arr1.get(i++);
+            } else {
+                A[k++] = arr2.get(j++);
+            }
+        }
+
+        while (i < arr1.length) { A[k++] = arr1.get(i++); }
+        while (j < arr2.length) { A[k++] = arr2.get(j++); }
+        length = size;
+    }
 };
 
 int main(){
