@@ -19,6 +19,10 @@ public:
         delete[] A;
     }
 
+    int getLength(){
+        return length;
+    }
+
     void display(){
         cout << "[";
         for (int i = 0; i < length; i++){
